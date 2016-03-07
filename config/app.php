@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 return [
 
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => env('APP_URL', 'http://foobooks.markmarinorocks.me'),
 
     /*
     |--------------------------------------------------------------------------

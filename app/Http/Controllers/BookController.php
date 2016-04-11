@@ -16,21 +16,16 @@ class BookController extends Controller {
     /**
      * Responds to requests to GET /books/show/{id}
      */
-    public function getShow($id) {
-        return 'Show an individual book: '.$id;
+    public function getShow($title = null) {
+        return view('books.show',['title' => $title, 'abc' => '123']);
+        #return 'Show an individual book: '.$title;
     }
 
     /**
      * Responds to requests to GET /books/create
      */
     public function getCreate() {
-        $view = '<form method="POST" action="/book/create">';
-        $view .= csrf_field();
-        $view .= 'Book title: <input type="text" name="title">';
-        $view .= '<input type="submit">';
-        $view .= '</form>';
-
-        return $view;
+        return view('books.create');
     }
 
     /**
@@ -38,5 +33,6 @@ class BookController extends Controller {
      */
     public function postCreate() {
         return 'Add the book: '.$_POST['title'];
+        #return redirect('/books');
     }
 } #eoc
